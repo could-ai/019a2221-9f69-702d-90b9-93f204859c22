@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
-import 'package:flashlight/flashlight.dart';
+import 'package:torch_light/torch_light.dart';
 
 void main() {
   runApp(SaraAIApp());
@@ -41,9 +41,9 @@ class _SaraHomeState extends State<SaraHome> {
           setState(() {
             _command = result.recognizedWords.toLowerCase();
             if (_command.contains('flashlight on')) {
-              Flashlight.lightOn();
+              TorchLight.enableTorch();
             } else if (_command.contains('flashlight off')) {
-              Flashlight.lightOff();
+              TorchLight.disableTorch();
             }
             // More commands can be added here
           });
